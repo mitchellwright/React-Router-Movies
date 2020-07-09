@@ -25,7 +25,10 @@ const App = () => {
   }, []);
 
   const addToSavedList = movie => {
-    setSavedList([...savedList, movie]);
+    if(savedList.filter( savedMovie => savedMovie.id === movie.id).length === 0) {
+      setSavedList([...savedList, movie]);
+    }
+    // setSavedList([...savedList, movie]);
   };
 
   return (

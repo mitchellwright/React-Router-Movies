@@ -13,12 +13,13 @@ const Movie = (props) => {
         .get(`http://localhost:5000/api/movies/${id}`)
         .then(response => {
           setMovie(response.data);
+          console.log('updated the movie');
         })
         .catch(error => {
           console.error(error);
         });
 
-  },[movie]);
+  },[id]);
 
   // Uncomment this only when you have moved on to the stretch goals
   const saveMovie = () => {
